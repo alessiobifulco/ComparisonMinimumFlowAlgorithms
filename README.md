@@ -1,53 +1,65 @@
-# Confronto tra Algoritmi per il Flusso di Costo Minimo
+# Comparison of Algorithms for Minimum-Cost Flow
 
-Progetto per il corso di Algoritmi e Strutture Dati che analizza e confronta le performance di due diversi algoritmi per la risoluzione del problema del flusso di costo minimo su un grafo.
+**Project for the Algorithms and Data Structures course**, analyzing and comparing the performance of two different algorithms for solving the **minimum-cost flow problem** on a graph.
 
 ---
 
-## Obiettivo del Progetto
+## Project Objective
 
-L'obiettivo di questo progetto è implementare e analizzare due approcci algoritmici classici per la risoluzione del problema del flusso di costo minimo: il **Cycle Canceling Algorithm** e il **Successive Shortest Path Algorithm (SSPA)**.
+The goal of this project is to implement and analyze two classical algorithmic approaches for the minimum-cost flow problem: the **Cycle Canceling Algorithm** and the **Successive Shortest Path Algorithm (SSPA)**.
 
-Attraverso l'implementazione in Python e l'ausilio di test su grafi generati casualmente, il progetto si propone di confrontare le performance e la complessità computazionale dei due metodi per determinare quale sia più efficiente in base alle caratteristiche del grafo (dimensione e densità).
+Using Python implementations and tests on randomly generated graphs, the project aims to compare the performance and computational complexity of the two methods, determining which is more efficient based on graph characteristics (size and density).
 
-## Il Problema del Flusso di Costo Minimo
+---
 
-Il flusso di costo minimo è un problema fondamentale di ottimizzazione su grafi. Dato un grafo orientato in cui ogni arco ha una **capacità massima** e un **costo** per unità di flusso, l'obiettivo è trovare un flusso da un nodo sorgente a un nodo di destinazione che minimizzi il costo totale, rispettando i vincoli di capacità degli archi e di conservazione del flusso nei nodi.
+## Minimum-Cost Flow Problem
 
-Questo problema ha numerose applicazioni in campi come la logistica, le telecomunicazioni e la progettazione di reti.
+The minimum-cost flow problem is a fundamental graph optimization problem.  
+Given a directed graph where each edge has a **maximum capacity** and a **cost** per unit of flow, the objective is to find a flow from a source node to a target node that **minimizes the total cost**, while respecting edge capacity constraints and flow conservation at each node.
 
-## Algoritmi Analizzati
+This problem has numerous applications in logistics, telecommunications, and network design.
 
-Per risolvere il problema sono stati implementati e confrontati i seguenti algoritmi:
+---
 
-* **Cycle Canceling Algorithm:** Un algoritmo iterativo che parte da un flusso ammissibile e cerca ripetutamente "cicli negativi" nel grafo residuo. Un ciclo negativo rappresenta un percorso chiuso in cui è possibile aumentare il flusso diminuendo il costo totale. L'algoritmo termina quando non esistono più cicli di questo tipo, garantendo di aver raggiunto la soluzione ottima.
+## Algorithms Analyzed
 
-* **Successive Shortest Path Algorithm (SSPA):** Questo algoritmo affronta il problema trovando iterativamente cammini minimi (in termini di costo) dalla sorgente alla destinazione nel grafo residuo. Ad ogni iterazione, il flusso viene aumentato lungo il cammino di costo minimo trovato. [cite_start]Il processo si conclude quando non esistono più cammini dalla sorgente alla destinazione.
+The following algorithms were implemented and compared:
 
-## Metodologia e Tecnologie
+- **Cycle Canceling Algorithm:** An iterative algorithm that starts from a feasible flow and repeatedly searches for **negative cycles** in the residual graph. A negative cycle represents a closed path where the flow can be increased while decreasing the total cost. The algorithm terminates when no more negative cycles exist, guaranteeing an optimal solution.  
 
-L'analisi comparativa è stata condotta seguendo questi passaggi:
+- **Successive Shortest Path Algorithm (SSPA):** This algorithm iteratively finds the shortest paths (in terms of cost) from the source to the target in the residual graph. At each iteration, the flow is increased along the minimum-cost path found. The process continues until no more paths exist from the source to the target.  
 
-1.  **Generazione di Grafi Casuali:** È stata creata una funzione in Python per generare grafi orientati casuali con un numero variabile di nodi e archi, a cui sono stati assegnati capacità e costi casuali per simulare diverse condizioni di test.
-2.  **Implementazione degli Algoritmi:** Entrambi gli algoritmi, Cycle Canceling e SSPA, sono stati implementati in Python.
-3.  **Visualizzazione e Analisi:** I grafi e i flussi risultanti sono stati visualizzati per un'analisi qualitativa. La performance è stata valutata in termini di complessità computazionale teorica e osservazioni pratiche.
+---
 
-Le tecnologie principali utilizzate per questo progetto sono:
+## Methodology and Technologies
 
-* **Linguaggio:** Python
-* **Librerie:**
-    * **NumPy:** Per la gestione efficiente di strutture dati numeriche.
-    * **NetworkX:** Per la creazione, manipolazione e studio di grafi complessi.
-    * **Matplotlib:** Per la visualizzazione dei grafi e dei risultati.
+The comparative analysis followed these steps:
 
-## Conclusioni
+1. **Random Graph Generation:** A Python function was created to generate directed random graphs with a variable number of nodes and edges, assigning random capacities and costs to simulate different test conditions.  
+2. **Algorithm Implementation:** Both the Cycle Canceling Algorithm and SSPA were implemented in Python.  
+3. **Visualization and Analysis:** Graphs and resulting flows were visualized for qualitative analysis. Performance was evaluated in terms of theoretical computational complexity and practical observations.  
 
-Dal confronto è emerso che, sebbene entrambi gli algoritmi convergano alla soluzione ottima, la loro efficienza dipende fortemente dalle caratteristiche del grafo:
+**Technologies used:**
 
-* L'**SSPA** tende ad essere più performante su grafi di piccole o medie dimensioni.
-* Il **Cycle Canceling Algorithm** può diventare più vantaggioso su grafi di grandi dimensioni ma con una bassa densità di archi.
+- **Language:** Python  
+- **Libraries:**  
+  - **NumPy:** For efficient handling of numerical data structures.  
+  - **NetworkX:** For creating, manipulating, and analyzing complex graphs.  
+  - **Matplotlib:** For visualizing graphs and results.  
 
-In conclusione, non esiste un algoritmo universalmente superiore; la scelta dipende dalla specifica struttura del problema da risolvere.
+---
+
+## Conclusions
+
+From the comparison, it emerged that while both algorithms converge to the optimal solution, their efficiency strongly depends on the graph characteristics:
+
+- **SSPA** tends to perform better on small to medium-sized graphs.  
+- **Cycle Canceling Algorithm** can be advantageous on large graphs with low edge density.  
+
+In conclusion, there is no universally superior algorithm; the choice depends on the specific problem structure.
+
+---
 
 ## Contatti
+
 * Alessio Bifulco: `alessio.bifulco@studio.unibo.it`
